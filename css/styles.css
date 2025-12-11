@@ -93,5 +93,57 @@ body {
     margin-bottom: 1rem;
 }
 
+.welcomeSection {
+    background: url(../images/bg.png);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    margin-bottom: 6rem;
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+}
+
+.welcomeWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+}
+
+
+.welcomeContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.welcomeContentImg {
+    padding: 0;
+}
+
+    .welcomeContentImg img {
+        height: 350px;
+    }
+
+.welcomeContent h1 {
+    font-size: 5rem;
+}
+
+.welcomeContent p {
+    font-size: 1.4rem;
+}
+
+.welcomeContent button {
+    width: 8vw;
+    color: white;
+    background-color: #2596be;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0;
+}
 
 
