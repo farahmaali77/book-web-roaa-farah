@@ -176,6 +176,62 @@ body {
 
 
 
+    .about {
+    padding: 50px;
+}
+
+.aboutContainer {
+    display: flex;
+    gap: 0.5rem;
+    padding: 20px;
+}
+
+
+.aboutContainerImg {
+    padding: 25px;
+}
+
+    .aboutContainerImg img {
+        height: 350px;
+    }
+
+
+.aboutContainerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    padding: 15px;
+    align-self: center;
+}
+
+    .aboutContainerContent p {
+        font-size: 19px !important;
+        font-weight: 400;
+    }
+
+.aboutSectionHeader {
+    font-size: 3rem;
+    text-align: left;
+}
+
+.aboutContainerContent p {
+    font-size: 1.5rem;
+}
+
+.aboutContainerContent button {
+    width: 8vw;
+    color: white;
+    background-color: #2596be;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0;
+}
+
+
+
+
 
 
 
