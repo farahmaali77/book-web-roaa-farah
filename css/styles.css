@@ -230,6 +230,94 @@ body {
 }
 
 
+.featured-books {
+    padding: 1em;
+    background-color: white;
+    margin-bottom: 8rem;
+}
+
+
+/* Scroll Box */
+.scroll-box {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5em;
+    padding: 1em;
+}
+
+
+
+/* Item Card */
+.itemCard {
+    flex: 0 0 15em;
+    border: 1px solid rgb(177, 177, 163);
+    padding: 1em;
+    background-color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+    .itemCard:hover {
+        box-shadow: 0px 0px 5px rgba(37, 150, 190, 1);
+    }
+
+    /* Item Image */
+    .itemCard img {
+        width: 9em;
+        height: auto;
+        margin-bottom: 1em;
+    }
+
+    /* Item Title */
+    .itemCard h2 {
+        font-size: 1.5em;
+        margin: 0.5em 0;
+        color: black;
+    }
+
+/* Item Details */
+.itemCardAuthor {
+    color: gray;
+    margin-bottom: 0.5rem;
+}
+
+.itemCardGenere {
+    color: #2596be;
+    margin-bottom: 0.5rem;
+}
+
+/* Price Styling */
+.itemCard .price {
+    font-weight: bold;
+    color: black;
+    margin-bottom: 0.5rem;
+}
+
+.itemCard .old-price {
+    text-decoration: line-through;
+    color: grey;
+    margin-bottom: 0.5rem;
+}
+
+/* Button Styling */
+.itemCard button {
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+    background-color: white;
+    border: 1px solid rgb(37, 150, 190);
+    color: rgb(37, 150, 190);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .itemCard button:hover {
+        background-color: rgb(37, 150, 190);
+        color: white;
+    }
+
+
+
 
 
 
