@@ -617,6 +617,29 @@ body
 
 
 
+.digitalBook {
+    height: 400px;
+    background: url(../images/banner.jpg);
+    background-size: cover;
+    margin-bottom: 8rem;
+}
+
+
+.digitalBookButton {
+    color: white;
+    background-color: #2596be;
+    margin-left: 7rem;
+    margin-top: 18rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0px;
+    
+}
+
+
+
 
 
     
