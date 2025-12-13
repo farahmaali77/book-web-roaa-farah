@@ -7,35 +7,41 @@
     scroll-behavior: smooth;
 }
 
-body {
+body 
+{
     min-height: 100vh;
     font-family: "Roboto", serif;
     font-style: normal;
 }
 
 
-::-webkit-scrollbar {
+::-webkit-scrollbar 
+{
     width: 1rem;
     height: 1rem;
     border-radius: 15rem;
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track 
+{
     background: white;
     border-radius: 15rem;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb
+ {
     background: #2596be;
     border-radius: 15rem;
 }
 
-::-webkit-scrollbar-button {
+::-webkit-scrollbar-button 
+{
     background: lightgray;
     border-radius: 15rem;
 }
 
-.headerNav {
+.headerNav
+ {
     position: fixed;
     top: 0;
     width: 100%;
@@ -47,12 +53,14 @@ body {
 }
 
 
-#headerWrapper {
+#headerWrapper 
+{
     display: flex;
     justify-content: space-around;
 }
 
-#navBarList {
+#navBarList 
+{
     color: black;
     display: flex;
     justify-content: center;
@@ -61,39 +69,46 @@ body {
     list-style: none;
 }
 
-.navBarListAnchor {
+.navBarListAnchor 
+{
     color: black;
     text-decoration: none;
 }
 
-#navBarLogo {
+#navBarLogo
+ {
     height: 50px;
 }
 
-#navBarIcons {
+#navBarIcons
+ {
     display: flex;
     gap: 1rem;
     align-self: center;
 }
 
-.navIcon {
+.navIcon
+ {
     height: 22px;
 }
 
-.darkModeButton {
+.darkModeButton
+ {
     background-color: transparent;
     border: 0;
     cursor: pointer;
 }
 
-.sectionHeader {
+.sectionHeader
+ {
     font-size: 3rem;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
-.welcomeSection {
+.welcomeSection
+ {
     background: url(../images/bg.png);
     background-size: cover;
     background-position: center;
@@ -103,7 +118,8 @@ body {
     padding-bottom: 12rem;
 }
 
-.welcomeWrapper {
+.welcomeWrapper 
+{
     display: flex;
     justify-content: center;
     gap: 10rem;
@@ -113,29 +129,35 @@ body {
 }
 
 
-.welcomeContent {
+.welcomeContent
+ {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.welcomeContentImg {
+.welcomeContentImg 
+{
     padding: 0;
 }
 
-    .welcomeContentImg img {
+    .welcomeContentImg img 
+    {
         height: 350px;
     }
 
-.welcomeContent h1 {
+.welcomeContent h1
+ {
     font-size: 5rem;
 }
 
-.welcomeContent p {
+.welcomeContent p 
+{
     font-size: 1.4rem;
 }
 
-.welcomeContent button {
+.welcomeContent button 
+{
     width: 8vw;
     color: white;
     background-color: #2596be;
@@ -146,7 +168,8 @@ body {
     border: 0;
 }
 
-.serviceContainer {
+.serviceContainer 
+{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -155,7 +178,8 @@ body {
     margin-bottom: 3rem;
 }
 
-.serviceContainerContent {
+.serviceContainerContent
+ {
     text-align: center;
     padding: 1.25em;
     box-shadow: 0 0.25em 0.375em rgba(8, 82, 78, 0.1);
@@ -164,11 +188,13 @@ body {
     box-shadow: 0px 0px 15px rgba(37, 150, 190, 1);
 }
 
-    .serviceContainerContent img {
+    .serviceContainerContent img 
+    {
         width: 15%;
     }
 
-    .serviceContainerContent:hover {
+    .serviceContainerContent:hover
+     {
         transform: translateY(-0.3125em);
         box-shadow: 0px 0px 5px rgba(37, 150, 190, 1);
     }
@@ -176,27 +202,32 @@ body {
 
 
 
-    .about {
+    .about 
+     {
     padding: 50px;
-}
+   }
 
-.aboutContainer {
+.aboutContainer 
+{
     display: flex;
     gap: 0.5rem;
     padding: 20px;
 }
 
 
-.aboutContainerImg {
+.aboutContainerImg
+ {
     padding: 25px;
 }
 
-    .aboutContainerImg img {
+    .aboutContainerImg img
+     {
         height: 350px;
     }
 
 
-.aboutContainerContent {
+.aboutContainerContent 
+{
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
@@ -204,21 +235,25 @@ body {
     align-self: center;
 }
 
-    .aboutContainerContent p {
+    .aboutContainerContent p 
+    {
         font-size: 19px !important;
         font-weight: 400;
     }
 
-.aboutSectionHeader {
+.aboutSectionHeader
+ {
     font-size: 3rem;
     text-align: left;
 }
 
-.aboutContainerContent p {
+.aboutContainerContent p
+ {
     font-size: 1.5rem;
 }
 
-.aboutContainerContent button {
+.aboutContainerContent button
+ {
     width: 8vw;
     color: white;
     background-color: #2596be;
@@ -230,15 +265,17 @@ body {
 }
 
 
-.featured-books {
+.featured-books
+ {
     padding: 1em;
     background-color: white;
     margin-bottom: 8rem;
 }
 
 
-/* Scroll Box */
-.scroll-box {
+
+.scroll-box 
+{
     display: flex;
     overflow-x: auto;
     gap: 1.5em;
@@ -247,8 +284,9 @@ body {
 
 
 
-/* Item Card */
-.itemCard {
+
+.itemCard 
+{
     flex: 0 0 15em;
     border: 1px solid rgb(177, 177, 163);
     padding: 1em;
@@ -258,50 +296,58 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-    .itemCard:hover {
+    .itemCard:hover 
+    {
         box-shadow: 0px 0px 5px rgba(37, 150, 190, 1);
     }
 
-    /* Item Image */
-    .itemCard img {
+    .itemCard img
+     {
         width: 9em;
         height: auto;
         margin-bottom: 1em;
     }
 
-    /* Item Title */
-    .itemCard h2 {
+  
+    .itemCard h2 
+    {
         font-size: 1.5em;
         margin: 0.5em 0;
         color: black;
     }
 
-/* Item Details */
-.itemCardAuthor {
+
+.itemCardAuthor 
+{
     color: gray;
     margin-bottom: 0.5rem;
 }
 
-.itemCardGenere {
+.itemCardGenere 
+{
     color: #2596be;
     margin-bottom: 0.5rem;
 }
 
-/* Price Styling */
-.itemCard .price {
+
+.itemCard .price 
+{
     font-weight: bold;
     color: black;
     margin-bottom: 0.5rem;
 }
 
-.itemCard .old-price {
+.itemCard .old-price
+ {
     text-decoration: line-through;
     color: grey;
     margin-bottom: 0.5rem;
 }
 
-/* Button Styling */
-.itemCard button {
+
+ .itemCard button
+   {
+
     margin-top: 0.5em;
     padding: 0.5em 1em;
     background-color: white;
@@ -309,12 +355,97 @@ body {
     color: rgb(37, 150, 190);
     cursor: pointer;
     transition: all 0.3s ease;
+
 }
 
-    .itemCard button:hover {
+    .itemCard button:hover
+     {
         background-color: rgb(37, 150, 190);
         color: white;
     }
+
+    .newStock {
+    padding: 0;
+    margin-bottom: 8rem;
+}
+
+
+.newStockWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+.newStockRow {
+    display: flex;
+    gap: 3rem;
+}
+
+.newStockItem {
+    width: 25vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0.5rem;
+    border: 1.5px gray solid;
+}
+
+.newStockItemImageWrapper {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.newStockItemRating {
+    display: flex;
+    justify-content: center;
+}
+
+.newStockPoster {
+    height: 30vh;
+    transition: all 0.5s;
+}
+
+.newStockParagraph {
+    text-align: center;
+    font-weight: 900;
+}
+
+.newStockStar {
+    height: 2vh;
+}
+
+.newStockButton {
+    color: black;
+    background-color: white;
+    width: 5vw;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    transition: all 0.5s;
+    border: 1px #2596be solid;
+}
+
+    .newStockButton:hover {
+        background-color: rgb(37, 150, 190);
+        color: white;
+    }
+
+
+.addShadow:hover {
+    box-shadow: 0px 0px 5px rgba(37, 150, 190, 1);
+}
+
+.addZoom:hover {
+    transform: scale(1.2);
+}
+
 
 
 
