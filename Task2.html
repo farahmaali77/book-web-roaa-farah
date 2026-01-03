@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Manager - Final Task</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-teal: #17a2b8;
+            --dark-grey: #343a40;
+            --light-grey: #f8f9fa;
+            --danger-red: #dc3545;
+            --border-color: #dee2e6;
+        }
+
+        body {
+             font-family: Arial, sans-serif;
+             background: #fff;
+              padding: 20px;
+               color: var(--dark-grey); 
+            }
+        .container { 
+            max-width: 900px;
+             margin: auto;
+              border: 1px solid var(--border-color); 
+              padding: 20px; 
+            }
+        h2 { 
+            text-align: center; 
+            font-size: 2rem; 
+            margin-bottom: 20px; 
+        }
+        .input-section { 
+            border: 1px solid var(--border-color); 
+            margin-bottom: 30px;
+         }
+        .section-header { 
+            background: var(--light-grey); 
+            padding: 10px 15px; 
+            font-weight: bold; 
+            border-bottom: 1px solid var(--border-color);
+         }
+        .input-body { 
+            padding: 20px; 
+        }
+        .input-group { 
+            display: flex; 
+            align-items: center;
+            border: 1px solid var(--border-color); 
+            margin-bottom: 15px; 
+            padding: 5px 10px;
+         }
+        .input-group i { 
+            margin-right: 10px;
+             color: var(--primary-teal);
+             }
+        .input-group input {
+             border: none; 
+            outline: none; width: 100%; padding: 8px; 
+            font-size: 1rem;
+         }
+        .btn-add { width: 100%;
+             padding: 10px; background: var(--primary-teal); 
+             color: white; 
+             border: none; 
+             cursor: pointer;
+              border-radius: 3px;
+             }
+        #errorBox { 
+            display: none; 
+            background: #f8d7da; 
+            color: #721c24;
+             padding: 10px; 
+             margin-bottom: 15px; 
+             border: 1px solid #f5c6cb;
+            }
+        .filter-buttons { 
+            display: flex; 
+            gap: 2px; 
+            margin-bottom: 20px; 
+        }
+        .filter-btn { flex: 1;
+             padding: 12px;
+              background: var(--primary-teal); 
+              color: white;
+               border: none; 
+               cursor: pointer;
+             }
+        .task-list {
+             list-style: none; 
+            padding: 0;
+         }
+        .task-item { 
+            display: flex; 
+            justify-content: space-between;
+             align-items: center; 
+             border: 1px solid var(--border-color);
+              padding: 12px 15px; 
+              margin-bottom: 10px;
+             }
+        .completed .task-text { 
+            text-decoration: line-through; 
+            color: var(--danger-red);
+         }
+        .task-actions { 
+            display: flex; 
+            gap: 12px; 
+            align-items: center; 
+        }
+        .btn-icon { 
+            background: none;
+             border: none; 
+             cursor: pointer; 
+             font-size: 1.2rem; 
+            }
+        .btn-edit { 
+            color: #ffc107; 
+        }
+        .btn-delete {
+             color: var(--danger-red);
+             }
+        .footer-actions { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-top: 20px;
+         }
+        .btn-danger-action {
+             width: 48%;
+             padding: 12px; 
+             background: var(--danger-red); 
+             color: white; 
+             border: none; 
+             cursor: pointer;
+             }
+
+        .modal-overlay { 
+            position: fixed; inset: 0; 
+            background: rgba(0,0,0,0.5);
+             display: none; 
+             justify-content: center;
+              align-items: center; 
+              z-index: 1000; 
+            }
+        .modal { 
+            background: white;
+             padding: 25px; width: 400px; 
+             border-radius: 5px;
+             }
+        .modal-buttons { 
+            display: flex; 
+            gap: 10px; 
+            margin-top: 20px; 
+        }
+        #saveEditBtn { background: #28a745; color: white; border: none;
+             padding: 10px 20px; cursor: pointer; 
+             border-radius: 3px; 
+            }
+        #cancelEditBtn { background: var(--danger-red); 
+            color: white; 
+            border: none; padding: 10px 20px; cursor: pointer; 
+            border-radius: 3px; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>TodoInput</h2>
+    <div class="input-section">
+        <div class="section-header">New Todo</div>
+        <div class="input-body">
+            <div id="errorBox"></div>
+            <div class="input-group">
+                <i class="fa-solid fa-book"></i>
+                <input type="text" id="taskInput" placeholder="New Todo">
+            </div>
+            <button class="btn-add" id="addTaskBtn">Add new task</button>
+        </div>
+    </div>
+
+    <h2>Todo List</h2>
+    <div class="filter-buttons">
+        <button class="filter-btn" id="filterAll">All</button>
+        <button class="filter-btn" id="filterDone">Done</button>
+        <button class="filter-btn" id="filterTodo">Todo</button>
+    </div>
+
+    <ul id="taskList" class="task-list"></ul>
+
+    <div class="footer-actions">
+        <button class="btn-danger-action" id="deleteDoneBtn">Delete Done Tasks</button>
+        <button class="btn-danger-action" id="deleteAllBtn">Delete All Tasks</button>
+    </div>
+</div>
+
+<div id="editModal" class="modal-overlay">
+    <div class="modal">
+        <h3>Rename Task</h3>
+        <input type="text" id="editInput" style="width:100%; padding:10px; box-sizing: border-box;">
+        <div class="modal-buttons">
+            <button id="saveEditBtn">Save</button>
+            <button id="cancelEditBtn">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    const defaultTasks = [
+        { id: 1, text: "Welcome to Todo manager Task", completed: false },
+        { id: 2, text: "In this Task you are going to build your own custom logic", completed: false },
+        { id: 3, text: "Task objectives is:", completed: false },
+        { id: 4, text: "a. DOM manipulation", completed: true },
+        { id: 5, text: "b. Event Handling", completed: true },
+        { id: 6, text: "c. Data storing (Sessions or cookies)", completed: false }
+    ];
+
+
+    let tasks = JSON.parse(localStorage.getItem('myTasks')) || defaultTasks;
+    let currentEditId = null;
+
+    function saveAndRender(filter = 'all') {
+        localStorage.setItem('myTasks', JSON.stringify(tasks));
+        const list = document.getElementById('taskList');
+        list.innerHTML = '';
+
+        tasks.forEach(t => {
+            if (filter === 'done' && !t.completed) return;
+            if (filter === 'todo' && t.completed) return;
+
+            const li = document.createElement('li');
+            li.className = `task-item ${t.completed ? 'completed' : ''}`;
+            li.innerHTML = `
+                <span class="task-text">${t.text}</span>
+                <div class="task-actions">
+                    <input type="checkbox" ${t.completed ? 'checked' : ''} onclick="toggleTask(${t.id})">
+                    <button class="btn-icon btn-edit" onclick="openEdit(${t.id}, '${t.text}')"><i class="fa fa-pen"></i></button>
+                    <button class="btn-icon btn-delete" onclick="deleteTask(${t.id})"><i class="fa fa-trash"></i></button>
+                </div>`;
+            list.appendChild(li);
+        });
+    }
+
+    // إضافة مهمة
+    document.getElementById('addTaskBtn').onclick = () => 
+    {
+        const val = document.getElementById('taskInput').value.trim();
+        const err = document.getElementById('errorBox');
+        if (val.length < 5) {
+            err.style.display = 'block';
+            err.innerText = "Task must be at least 5 characters long";
+            return;
+        }
+        err.style.display = 'none';
+        tasks.push({ id: Date.now(), text: val, completed: false });
+        document.getElementById('taskInput').value = '';
+        saveAndRender();
+    };
+
+    window.toggleTask = (id) => 
+    {
+        tasks = tasks.map(t => t.id === id ? {...t, completed: !t.completed} : t);
+        saveAndRender();
+    };
+
+    window.deleteTask = (id) => 
+    {
+        if(confirm("Are you sure?")) {
+            tasks = tasks.filter(t => t.id !== id);
+            saveAndRender();
+        }
+    };
+
+    window.openEdit = (id, text) =>
+     {
+        currentEditId = id;
+        document.getElementById('editInput').value = text;
+        document.getElementById('editModal').style.display = 'flex';
+    };
+
+    document.getElementById('saveEditBtn').onclick = () => {
+        const newVal = document.getElementById('editInput').value.trim();
+        if(newVal) {
+            tasks = tasks.map(t => t.id === currentEditId ? {...t, text: newVal} : t);
+            document.getElementById('editModal').style.display = 'none';
+            saveAndRender();
+        }
+    };
+
+    document.getElementById('cancelEditBtn').onclick = () => document.getElementById('editModal').style.display = 'none';
+    document.getElementById('deleteAllBtn').onclick = () => { if(confirm("Delete all?")) { tasks = []; saveAndRender(); } };
+    document.getElementById('deleteDoneBtn').onclick = () => { tasks = tasks.filter(t => !t.completed); saveAndRender(); };
+    document.getElementById('filterAll').onclick = () => saveAndRender('all');
+    document.getElementById('filterDone').onclick = () => saveAndRender('done');
+    document.getElementById('filterTodo').onclick = () => saveAndRender('todo');
+
+   
+    saveAndRender();
+</script>
+</body>
+</html>
